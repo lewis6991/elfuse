@@ -380,9 +380,11 @@ typedef struct {
 /* Linux clocks and POSIX timer flags. */
 #define LINUX_CLOCK_REALTIME 0
 #define LINUX_CLOCK_MONOTONIC 1
+#define LINUX_CLOCK_BOOTTIME 7
 #define LINUX_TIMER_ABSTIME 1
 #define LINUX_SIGEV_SIGNAL 0
 #define LINUX_SIGEV_NONE 1
+#define LINUX_SIGEV_THREAD_ID 4
 
 /* Linux struct itimerspec, shared by POSIX timers and timerfd. */
 typedef struct {

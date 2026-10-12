@@ -712,8 +712,9 @@ void signal_check_timer(void);
  */
 void signal_check_timer_real(void);
 
-/* Process-wide POSIX timers. Supports REALTIME/MONOTONIC clocks and
- * SIGEV_SIGNAL/SIGEV_NONE notification. These helpers acquire sig_lock.
+/* Process-wide POSIX timers with REALTIME/MONOTONIC clocks and
+ * SIGEV_SIGNAL/SIGEV_NONE notification. BOOTTIME uses monotonic time, as in
+ * translate_clockid. These helpers acquire sig_lock.
  */
 int signal_posix_timer_create(int clockid,
                               int notify,
