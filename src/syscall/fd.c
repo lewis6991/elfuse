@@ -89,12 +89,6 @@ static int sfd_alloc_slot(const void *state, size_t count, size_t stride)
 #define LINUX_TFD_TIMER_ABSTIME 1
 #define LINUX_TFD_TIMER_CANCEL_ON_SET 2
 
-/* Linux CLOCK_BOOTTIME counts time including suspend; macOS has no equivalent.
- * timerfd_settime treats non-REALTIME slots as MONOTONIC for ABSTIME
- * conversion, which matches translate_clockid() in time.c.
- */
-#define LINUX_CLOCK_BOOTTIME 7
-
 static struct {
     int guest_fd;         /* Guest fd (-1 if unused) */
     int kq_fd;            /* kqueue fd for this timer */
